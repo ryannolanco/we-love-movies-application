@@ -17,6 +17,9 @@ module.exports = {
     seeds: {
       directory: path.join(__dirname, "src", "db", "seeds"),
     },
+    ssl: {
+      rejectUnauthorized: false // This will allow connections without requiring SSL certificates to be valid.
+    },
   },
 
   production: {
@@ -45,3 +48,5 @@ module.exports = {
     useNullAsDefault: true,
   },
 };
+
+
