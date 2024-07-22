@@ -6,13 +6,16 @@ const cors = require('cors');
 const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler");
 
-
+const corsOptions = {
+  methods: "OPTIONS, DELETE, GET, POST, PUT"  // Add other methods as needed
+};
 
 //when in the development environment cors is enabled for the entire app
-if (process.env.NODE_ENV === 'development') {
-  app.use(cors());
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(cors(corsOptions));
+// }
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 //movies router
